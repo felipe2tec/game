@@ -1,8 +1,7 @@
-export default class Platform{
-    constructor(canvas, ctx, gravity,positionX,positionY,image){
+export default class GenericObject{
+    constructor(canvas,ctx,positionX,positionY,image){
         this.canvas = canvas
         this.ctx  = ctx
-        this.gravity = gravity
         this.image = image
         this.width = image.width
         this.height = image.height
