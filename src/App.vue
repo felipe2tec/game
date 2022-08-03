@@ -1,6 +1,33 @@
 <template>
-  <div>
-  </div>
+  <v-card width="(0.18) * innerWidth" height="innerHeight" class="top">
+    <v-card-title class="text-h5 grey lighten-2">
+      HackSlash 
+    </v-card-title>
+    <v-card-title class="text-h5 grey lighten-2">
+      Quantidade
+    </v-card-title>
+    <v-card-title class="text-h5 grey lighten-2">
+      Quantidade d
+    </v-card-title>
+    <v-card-title class="text-h5 grey lighten-2">
+      Quantid
+    </v-card-title>
+    <v-card-title class="text-h5 grey lighten-2">
+      Arma corp
+    </v-card-title>
+    <v-card-title class="text-h5 grey lighten-2">
+      Arma a distancia:
+    </v-card-title>
+    <v-card-title class="text-h5 grey lighten-2">
+      Armadura:
+    </v-card-title>
+    <v-card-title class="text-h5 grey lighten-2">
+      Feitiço 1:
+    </v-card-title>
+    <v-card-title class="text-h5 gre  y lighten-2">
+      Feitiço 2:
+    </v-card-title>
+  </v-card>
 </template>
 
 <script>
@@ -16,6 +43,7 @@ export default {
   name: 'App',
   data(){
     return{
+      dialog:true,
       canvas: document.querySelector('#canvas'),
       gravity:2,
       ctx: '',
@@ -29,6 +57,7 @@ export default {
     }
   },
   created(){
+    document.getElementById('canvasDiv').style.marginLeft = 10
     this.platImage.src = platImg
     this.backgroundImg.src = bgImg
     this.hillsImage.src = hillsImg
@@ -39,8 +68,9 @@ export default {
   },
   methods:{
     init(){
+      console.log((0.80) * innerWidth)
       this.ctx = this.canvas.getContext('2d')
-      this.canvas.width = 1024
+      this.canvas.width = (0.80) * innerWidth
       this.canvas.height = 576
       this.player = new Player(this.canvas, this.ctx, this.gravity)
       this.genericObjects.push(new GenericObject(this.canvas, this.ctx, -130, 0, this.backgroundImg))
